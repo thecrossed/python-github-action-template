@@ -24,9 +24,16 @@ except KeyError:
     #raise
 
 
-if __name__ == "__main__":
+
+    
+def main():
     r = requests.get('https://weather.talkpython.fm/api/weather?city=Uppsala&country=SE')
     if r.status_code == 200:
         data = r.json()
         temperature = data["forecast"]["temp"]
         logger.info(f'Weather in Uppsala: {temperature}')
+
+
+
+if __name__ == "__main__":
+    main()
